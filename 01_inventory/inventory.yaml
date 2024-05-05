@@ -1,0 +1,16 @@
+all:
+  hosts:
+    server01:
+      ansible_host: 165.22.52.210
+      ansible_password: xxx
+    server02:
+      ansible_host: 209.38.136.91
+      ansible_password: xxx
+  vars:
+    ansible_user: root
+
+children:
+  webservers:
+    hosts:
+      server01:
+      server02:
