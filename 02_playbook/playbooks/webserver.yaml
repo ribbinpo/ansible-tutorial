@@ -1,0 +1,26 @@
+- name: Webserver setup
+  hosts: server01
+  become: yes
+  tasks:
+    - name: Install Apache2
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+    - name: Start service
+      ansible.builtin.service:
+        name: apache2
+        state: started
+        enabled: yes
+- name: DBServer setup
+  hosts: server02
+  become: yes
+  tasks:
+    - name: Install PostgreSQL
+      apt:
+        name: postgresql
+        state: present
+    - name: Ensure PostgreSQL service is started and enabled
+      systemd:
+        name: postgresql
+        state: started
+        enabled: yes
