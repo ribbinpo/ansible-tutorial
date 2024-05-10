@@ -1,0 +1,14 @@
+- name: Print Facts
+  hosts: all
+  # if is False, it cannot get variable of facts
+  # gather_facts:: False
+  tasks:
+    - name: Print OS name
+      debug:
+        var: ansible_distribution
+    - name: Print RAM memory
+      debug:
+        var: ansible_memory_mb.real.free
+    - name: Print Processor name
+      debug:
+        var: ansible_processor[2]
