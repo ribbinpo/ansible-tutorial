@@ -1,0 +1,447 @@
+2024-05-08 21:51:19,282 p=23364 u=poom n=ansible | ansible-playbook [core 2.15.11]
+  config file = /Users/poom/Desktop/learning/ansible/03_ansibleconfig/ansible.cfg
+  configured module search path = ['/Users/poom/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /Users/poom/Desktop/learning/ansible/env/lib/python3.9/site-packages/ansible
+  ansible collection location = /Users/poom/.ansible/collections:/usr/share/ansible/collections
+  executable location = /Users/poom/Desktop/learning/ansible/env/bin/ansible-playbook
+  python version = 3.9.6 (default, Feb  3 2024, 15:58:27) [Clang 15.0.0 (clang-1500.3.9.4)] (/Users/poom/Desktop/learning/ansible/env/bin/python3)
+  jinja version = 3.1.3
+  libyaml = True
+2024-05-08 21:51:19,283 p=23364 u=poom n=ansible | Using /Users/poom/Desktop/learning/ansible/03_ansibleconfig/ansible.cfg as config file
+2024-05-08 21:51:19,414 p=23364 u=poom n=ansible | Skipping callback 'default', as we already have a stdout callback.
+2024-05-08 21:51:19,415 p=23364 u=poom n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2024-05-08 21:51:19,415 p=23364 u=poom n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2024-05-08 21:51:19,415 p=23364 u=poom n=ansible | PLAYBOOK: webserver.yaml ***********************************************************************************************************************************
+2024-05-08 21:51:19,415 p=23364 u=poom n=ansible | 2 plays in playbooks/webserver.yaml
+2024-05-08 21:51:19,415 p=23364 u=poom n=ansible | PLAY [Webserver setup] *************************************************************************************************************************************
+2024-05-08 21:51:19,420 p=23364 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-08 21:51:23,417 p=23364 u=poom n=ansible | ok: [server01]
+2024-05-08 21:51:23,431 p=23364 u=poom n=ansible | TASK [Install Apache2] *************************************************************************************************************************************
+2024-05-08 21:51:26,115 p=23364 u=poom n=ansible | ok: [server01] => {"cache_update_time": 1715144519, "cache_updated": false, "changed": false}
+2024-05-08 21:51:26,120 p=23364 u=poom n=ansible | TASK [Start service] ***************************************************************************************************************************************
+2024-05-08 21:51:28,015 p=23364 u=poom n=ansible | ok: [server01] => {"changed": false, "enabled": true, "name": "apache2", "state": "started", "status": {"ActiveEnterTimestamp": "Tue 2024-05-07 17:28:30 UTC", "ActiveEnterTimestampMonotonic": "171111184688", "ActiveExitTimestamp": "Tue 2024-05-07 17:02:06 UTC", "ActiveExitTimestampMonotonic": "169526890146", "ActiveState": "active", "After": "sysinit.target systemd-journald.socket basic.target remote-fs.target systemd-tmpfiles-setup.service network.target tmp.mount system.slice nss-lookup.target -.mount", "AllowIsolate": "no", "AssertResult": "yes", "AssertTimestamp": "Tue 2024-05-07 17:28:30 UTC", "AssertTimestampMonotonic": "171111111127", "Before": "multi-user.target shutdown.target", "BlockIOAccounting": "no", "BlockIOWeight": "[not set]", "CPUAccounting": "yes", "CPUAffinityFromNUMA": "no", "CPUQuotaPerSecUSec": "infinity", "CPUQuotaPeriodUSec": "infinity", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "[not set]", "CPUUsageNSec": "5460631000", "CPUWeight": "[not set]", "CacheDirectoryMode": "0755", "CanFreeze": "yes", "CanIsolate": "no", "CanReload": "yes", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read cap_perfmon cap_bpf cap_checkpoint_restore", "CleanResult": "success", "CollectMode": "inactive", "ConditionResult": "yes", "ConditionTimestamp": "Tue 2024-05-07 17:28:30 UTC", "ConditionTimestampMonotonic": "171111111124", "ConfigurationDirectoryMode": "0755", "Conflicts": "shutdown.target", "ControlGroup": "/system.slice/apache2.service", "ControlGroupId": "26955", "ControlPID": "0", "CoredumpFilter": "0x33", "CoredumpReceive": "no", "DefaultDependencies": "yes", "DefaultMemoryLow": "0", "DefaultMemoryMin": "0", "DefaultStartupMemoryLow": "0", "Delegate": "no", "Description": "The Apache HTTP Server", "DevicePolicy": "auto", "Documentation": "https://httpd.apache.org/docs/2.4/", "DynamicUser": "no", "Environment": "APACHE_STARTED_BY_SYSTEMD=true", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "39801", "ExecMainStartTimestamp": "Tue 2024-05-07 17:28:30 UTC", "ExecMainStartTimestampMonotonic": "171111184655", "ExecMainStatus": "0", "ExecReload": "{ path=/usr/sbin/apachectl ; argv[]=/usr/sbin/apachectl graceful ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecReloadEx": "{ path=/usr/sbin/apachectl ; argv[]=/usr/sbin/apachectl graceful ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStart": "{ path=/usr/sbin/apachectl ; argv[]=/usr/sbin/apachectl start ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStartEx": "{ path=/usr/sbin/apachectl ; argv[]=/usr/sbin/apachectl start ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStop": "{ path=/usr/sbin/apachectl ; argv[]=/usr/sbin/apachectl graceful-stop ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStopEx": "{ path=/usr/sbin/apachectl ; argv[]=/usr/sbin/apachectl graceful-stop ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExitType": "main", "ExtensionImagePolicy": "root=verity+signed+encrypted+unprotected+absent:usr=verity+signed+encrypted+unprotected+absent:home=encrypted+unprotected+absent:srv=encrypted+unprotected+absent:tmp=encrypted+unprotected+absent:var=encrypted+unprotected+absent", "FailureAction": "none", "FileDescriptorStoreMax": "0", "FileDescriptorStorePreserve": "restart", "FinalKillSignal": "9", "FragmentPath": "/usr/lib/systemd/system/apache2.service", "FreezerState": "running", "GID": "[not set]", "GuessMainPID": "yes", "IOAccounting": "no", "IOReadBytes": "[not set]", "IOReadOperations": "[not set]", "IOSchedulingClass": "2", "IOSchedulingPriority": "4", "IOWeight": "[not set]", "IOWriteBytes": "[not set]", "IOWriteOperations": "[not set]", "IPAccounting": "no", "IPEgressBytes": "[no data]", "IPEgressPackets": "[no data]", "IPIngressBytes": "[no data]", "IPIngressPackets": "[no data]", "Id": "apache2.service", "IgnoreOnIsolate": "no", "IgnoreSIGPIPE": "yes", "InactiveEnterTimestamp": "Tue 2024-05-07 17:02:06 UTC", "InactiveEnterTimestampMonotonic": "169526951930", "InactiveExitTimestamp": "Tue 2024-05-07 17:28:30 UTC", "InactiveExitTimestampMonotonic": "171111120410", "InvocationID": "5b5f78918ad44a21aa2ad5558a6eb0ab", "JobRunningTimeoutUSec": "infinity", "JobTimeoutAction": "none", "JobTimeoutUSec": "infinity", "KeyringMode": "private", "KillMode": "mixed", "KillSignal": "15", "LimitAS": "infinity", "LimitASSoft": "infinity", "LimitCORE": "infinity", "LimitCORESoft": "0", "LimitCPU": "infinity", "LimitCPUSoft": "infinity", "LimitDATA": "infinity", "LimitDATASoft": "infinity", "LimitFSIZE": "infinity", "LimitFSIZESoft": "infinity", "LimitLOCKS": "infinity", "LimitLOCKSSoft": "infinity", "LimitMEMLOCK": "8388608", "LimitMEMLOCKSoft": "8388608", "LimitMSGQUEUE": "819200", "LimitMSGQUEUESoft": "819200", "LimitNICE": "0", "LimitNICESoft": "0", "LimitNOFILE": "524288", "LimitNOFILESoft": "1024", "LimitNPROC": "1697", "LimitNPROCSoft": "1697", "LimitRSS": "infinity", "LimitRSSSoft": "infinity", "LimitRTPRIO": "0", "LimitRTPRIOSoft": "0", "LimitRTTIME": "infinity", "LimitRTTIMESoft": "infinity", "LimitSIGPENDING": "1697", "LimitSIGPENDINGSoft": "1697", "LimitSTACK": "infinity", "LimitSTACKSoft": "8388608", "LoadState": "loaded", "LockPersonality": "no", "LogLevelMax": "-1", "LogRateLimitBurst": "0", "LogRateLimitIntervalUSec": "0", "LogsDirectoryMode": "0755", "MainPID": "39801", "ManagedOOMMemoryPressure": "auto", "ManagedOOMMemoryPressureLimit": "0", "ManagedOOMPreference": "none", "ManagedOOMSwap": "auto", "MemoryAccounting": "yes", "MemoryAvailable": "291401728", "MemoryCurrent": "8531968", "MemoryDenyWriteExecute": "no", "MemoryHigh": "infinity", "MemoryKSM": "no", "MemoryLimit": "infinity", "MemoryLow": "0", "MemoryMax": "infinity", "MemoryMin": "0", "MemoryPeak": "9744384", "MemoryPressureThresholdUSec": "200ms", "MemoryPressureWatch": "auto", "MemorySwapCurrent": "0", "MemorySwapMax": "infinity", "MemorySwapPeak": "0", "MemoryZSwapCurrent": "0", "MemoryZSwapMax": "infinity", "MountAPIVFS": "no", "MountImagePolicy": "root=verity+signed+encrypted+unprotected+absent:usr=verity+signed+encrypted+unprotected+absent:home=encrypted+unprotected+absent:srv=encrypted+unprotected+absent:tmp=encrypted+unprotected+absent:var=encrypted+unprotected+absent", "NFileDescriptorStore": "0", "NRestarts": "0", "NUMAPolicy": "n/a", "Names": "apache2.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "none", "OOMPolicy": "continue", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "OnSuccessJobMode": "fail", "Perpetual": "no", "PrivateDevices": "no", "PrivateIPC": "no", "PrivateMounts": "no", "PrivateNetwork": "no", "PrivateTmp": "yes", "PrivateUsers": "no", "ProcSubset": "all", "ProtectClock": "no", "ProtectControlGroups": "no", "ProtectHome": "no", "ProtectHostname": "no", "ProtectKernelLogs": "no", "ProtectKernelModules": "no", "ProtectKernelTunables": "no", "ProtectProc": "default", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "ReloadResult": "success", "ReloadSignal": "1", "RemainAfterExit": "no", "RemoveIPC": "no", "Requires": "system.slice -.mount sysinit.target", "RequiresMountsFor": "/var/tmp", "Restart": "on-abort", "RestartKillSignal": "15", "RestartMaxDelayUSec": "infinity", "RestartMode": "normal", "RestartSteps": "0", "RestartUSec": "100ms", "RestartUSecNext": "100ms", "RestrictNamespaces": "no", "RestrictRealtime": "no", "RestrictSUIDSGID": "no", "Result": "success", "RootDirectoryStartOnly": "no", "RootEphemeral": "no", "RootImagePolicy": "root=verity+signed+encrypted+unprotected+absent:usr=verity+signed+encrypted+unprotected+absent:home=encrypted+unprotected+absent:srv=encrypted+unprotected+absent:tmp=encrypted+unprotected+absent:var=encrypted+unprotected+absent", "RuntimeDirectoryMode": "0755", "RuntimeDirectoryPreserve": "no", "RuntimeMaxUSec": "infinity", "RuntimeRandomizedExtraUSec": "0", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "SetLoginEnvironment": "no", "Slice": "system.slice", "StandardError": "inherit", "StandardInput": "null", "StandardOutput": "journal", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitIntervalUSec": "10s", "StartupBlockIOWeight": "[not set]", "StartupCPUShares": "[not set]", "StartupCPUWeight": "[not set]", "StartupIOWeight": "[not set]", "StartupMemoryHigh": "infinity", "StartupMemoryLow": "0", "StartupMemoryMax": "infinity", "StartupMemorySwapMax": "infinity", "StartupMemoryZSwapMax": "infinity", "StateChangeTimestamp": "Tue 2024-05-07 17:28:30 UTC", "StateChangeTimestampMonotonic": "171111184688", "StateDirectoryMode": "0755", "StatusErrno": "0", "StopWhenUnneeded": "no", "SubState": "running", "SuccessAction": "none", "SurviveFinalKillSignal": "no", "SyslogFacility": "3", "SyslogLevel": "6", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "2147483646", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TasksAccounting": "yes", "TasksCurrent": "55", "TasksMax": "509", "TimeoutAbortUSec": "1min 30s", "TimeoutCleanUSec": "infinity", "TimeoutStartFailureMode": "terminate", "TimeoutStartUSec": "1min 30s", "TimeoutStopFailureMode": "terminate", "TimeoutStopUSec": "1min 30s", "TimerSlackNSec": "50000", "Transient": "no", "Type": "forking", "UID": "[not set]", "UMask": "0022", "UnitFilePreset": "enabled", "UnitFileState": "enabled", "UtmpMode": "init", "WantedBy": "multi-user.target", "Wants": "tmp.mount", "WatchdogSignal": "6", "WatchdogTimestampMonotonic": "0", "WatchdogUSec": "0"}}
+2024-05-08 21:51:28,038 p=23364 u=poom n=ansible | PLAY [DBServer setup] **************************************************************************************************************************************
+2024-05-08 21:51:28,040 p=23364 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-08 21:51:35,918 p=23364 u=poom n=ansible | ok: [server02]
+2024-05-08 21:51:35,933 p=23364 u=poom n=ansible | TASK [Install PostgreSQL] **********************************************************************************************************************************
+2024-05-08 21:51:42,846 p=23364 u=poom n=ansible | ok: [server02] => {"cache_update_time": 1715133899, "cache_updated": false, "changed": false}
+2024-05-08 21:51:42,857 p=23364 u=poom n=ansible | TASK [Ensure PostgreSQL service is started and enabled] ****************************************************************************************************
+2024-05-08 21:51:48,606 p=23364 u=poom n=ansible | ok: [server02] => {"changed": false, "enabled": true, "name": "postgresql", "state": "started", "status": {"ActiveEnterTimestamp": "Tue 2024-05-07 17:29:08 UTC", "ActiveEnterTimestampMonotonic": "170773308596", "ActiveExitTimestampMonotonic": "0", "ActiveState": "active", "After": "postgresql@16-main.service systemd-journald.socket system.slice sysinit.target basic.target", "AllowIsolate": "no", "AssertResult": "yes", "AssertTimestamp": "Tue 2024-05-07 17:29:07 UTC", "AssertTimestampMonotonic": "170773295964", "Before": "shutdown.target multi-user.target", "BlockIOAccounting": "no", "BlockIOWeight": "[not set]", "CPUAccounting": "yes", "CPUAffinityFromNUMA": "no", "CPUQuotaPerSecUSec": "infinity", "CPUQuotaPeriodUSec": "infinity", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "[not set]", "CPUUsageNSec": "3935000", "CPUWeight": "[not set]", "CacheDirectoryMode": "0755", "CanFreeze": "yes", "CanIsolate": "no", "CanReload": "yes", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read cap_perfmon cap_bpf cap_checkpoint_restore", "CleanResult": "success", "CollectMode": "inactive", "ConditionResult": "yes", "ConditionTimestamp": "Tue 2024-05-07 17:29:07 UTC", "ConditionTimestampMonotonic": "170773295961", "ConfigurationDirectoryMode": "0755", "Conflicts": "shutdown.target", "ConsistsOf": "postgresql@16-main.service", "ControlGroupId": "0", "ControlPID": "0", "CoredumpFilter": "0x33", "CoredumpReceive": "no", "DefaultDependencies": "yes", "DefaultMemoryLow": "0", "DefaultMemoryMin": "0", "DefaultStartupMemoryLow": "0", "Delegate": "no", "Description": "PostgreSQL RDBMS", "DevicePolicy": "auto", "DynamicUser": "no", "ExecMainCode": "1", "ExecMainExitTimestamp": "Tue 2024-05-07 17:29:08 UTC", "ExecMainExitTimestampMonotonic": "170773308431", "ExecMainPID": "17315", "ExecMainStartTimestamp": "Tue 2024-05-07 17:29:08 UTC", "ExecMainStartTimestampMonotonic": "170773302066", "ExecMainStatus": "0", "ExecReload": "{ path=/bin/true ; argv[]=/bin/true ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecReloadEx": "{ path=/bin/true ; argv[]=/bin/true ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStart": "{ path=/bin/true ; argv[]=/bin/true ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStartEx": "{ path=/bin/true ; argv[]=/bin/true ; flags= ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExitType": "main", "ExtensionImagePolicy": "root=verity+signed+encrypted+unprotected+absent:usr=verity+signed+encrypted+unprotected+absent:home=encrypted+unprotected+absent:srv=encrypted+unprotected+absent:tmp=encrypted+unprotected+absent:var=encrypted+unprotected+absent", "FailureAction": "none", "FileDescriptorStoreMax": "0", "FileDescriptorStorePreserve": "restart", "FinalKillSignal": "9", "FragmentPath": "/usr/lib/systemd/system/postgresql.service", "FreezerState": "running", "GID": "[not set]", "GuessMainPID": "yes", "IOAccounting": "no", "IOReadBytes": "[not set]", "IOReadOperations": "[not set]", "IOSchedulingClass": "2", "IOSchedulingPriority": "4", "IOWeight": "[not set]", "IOWriteBytes": "[not set]", "IOWriteOperations": "[not set]", "IPAccounting": "no", "IPEgressBytes": "[no data]", "IPEgressPackets": "[no data]", "IPIngressBytes": "[no data]", "IPIngressPackets": "[no data]", "Id": "postgresql.service", "IgnoreOnIsolate": "no", "IgnoreSIGPIPE": "yes", "InactiveEnterTimestampMonotonic": "0", "InactiveExitTimestamp": "Tue 2024-05-07 17:29:08 UTC", "InactiveExitTimestampMonotonic": "170773302340", "InvocationID": "800468424a83402b9664c16f73aaf7ae", "JobRunningTimeoutUSec": "infinity", "JobTimeoutAction": "none", "JobTimeoutUSec": "infinity", "KeyringMode": "private", "KillMode": "control-group", "KillSignal": "15", "LimitAS": "infinity", "LimitASSoft": "infinity", "LimitCORE": "infinity", "LimitCORESoft": "0", "LimitCPU": "infinity", "LimitCPUSoft": "infinity", "LimitDATA": "infinity", "LimitDATASoft": "infinity", "LimitFSIZE": "infinity", "LimitFSIZESoft": "infinity", "LimitLOCKS": "infinity", "LimitLOCKSSoft": "infinity", "LimitMEMLOCK": "8388608", "LimitMEMLOCKSoft": "8388608", "LimitMSGQUEUE": "819200", "LimitMSGQUEUESoft": "819200", "LimitNICE": "0", "LimitNICESoft": "0", "LimitNOFILE": "524288", "LimitNOFILESoft": "1024", "LimitNPROC": "1697", "LimitNPROCSoft": "1697", "LimitRSS": "infinity", "LimitRSSSoft": "infinity", "LimitRTPRIO": "0", "LimitRTPRIOSoft": "0", "LimitRTTIME": "infinity", "LimitRTTIMESoft": "infinity", "LimitSIGPENDING": "1697", "LimitSIGPENDINGSoft": "1697", "LimitSTACK": "infinity", "LimitSTACKSoft": "8388608", "LoadState": "loaded", "LockPersonality": "no", "LogLevelMax": "-1", "LogRateLimitBurst": "0", "LogRateLimitIntervalUSec": "0", "LogsDirectoryMode": "0755", "MainPID": "0", "ManagedOOMMemoryPressure": "auto", "ManagedOOMMemoryPressureLimit": "0", "ManagedOOMPreference": "none", "ManagedOOMSwap": "auto", "MemoryAccounting": "yes", "MemoryAvailable": "284577792", "MemoryCurrent": "[not set]", "MemoryDenyWriteExecute": "no", "MemoryHigh": "infinity", "MemoryKSM": "no", "MemoryLimit": "infinity", "MemoryLow": "0", "MemoryMax": "infinity", "MemoryMin": "0", "MemoryPeak": "[not set]", "MemoryPressureThresholdUSec": "200ms", "MemoryPressureWatch": "auto", "MemorySwapCurrent": "[not set]", "MemorySwapMax": "infinity", "MemorySwapPeak": "[not set]", "MemoryZSwapCurrent": "[not set]", "MemoryZSwapMax": "infinity", "MountAPIVFS": "no", "MountImagePolicy": "root=verity+signed+encrypted+unprotected+absent:usr=verity+signed+encrypted+unprotected+absent:home=encrypted+unprotected+absent:srv=encrypted+unprotected+absent:tmp=encrypted+unprotected+absent:var=encrypted+unprotected+absent", "NFileDescriptorStore": "0", "NRestarts": "0", "NUMAPolicy": "n/a", "Names": "postgresql.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "none", "OOMPolicy": "stop", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "OnSuccessJobMode": "fail", "Perpetual": "no", "PrivateDevices": "no", "PrivateIPC": "no", "PrivateMounts": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "PrivateUsers": "no", "ProcSubset": "all", "PropagatesReloadTo": "postgresql@16-main.service", "ProtectClock": "no", "ProtectControlGroups": "no", "ProtectHome": "no", "ProtectHostname": "no", "ProtectKernelLogs": "no", "ProtectKernelModules": "no", "ProtectKernelTunables": "no", "ProtectProc": "default", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "ReloadResult": "success", "ReloadSignal": "1", "RemainAfterExit": "yes", "RemoveIPC": "no", "Requires": "system.slice sysinit.target", "Restart": "no", "RestartKillSignal": "15", "RestartMaxDelayUSec": "infinity", "RestartMode": "normal", "RestartSteps": "0", "RestartUSec": "100ms", "RestartUSecNext": "100ms", "RestrictNamespaces": "no", "RestrictRealtime": "no", "RestrictSUIDSGID": "no", "Result": "success", "RootDirectoryStartOnly": "no", "RootEphemeral": "no", "RootImagePolicy": "root=verity+signed+encrypted+unprotected+absent:usr=verity+signed+encrypted+unprotected+absent:home=encrypted+unprotected+absent:srv=encrypted+unprotected+absent:tmp=encrypted+unprotected+absent:var=encrypted+unprotected+absent", "RuntimeDirectoryMode": "0755", "RuntimeDirectoryPreserve": "no", "RuntimeMaxUSec": "infinity", "RuntimeRandomizedExtraUSec": "0", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "SetLoginEnvironment": "no", "Slice": "system.slice", "StandardError": "inherit", "StandardInput": "null", "StandardOutput": "journal", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitIntervalUSec": "10s", "StartupBlockIOWeight": "[not set]", "StartupCPUShares": "[not set]", "StartupCPUWeight": "[not set]", "StartupIOWeight": "[not set]", "StartupMemoryHigh": "infinity", "StartupMemoryLow": "0", "StartupMemoryMax": "infinity", "StartupMemorySwapMax": "infinity", "StartupMemoryZSwapMax": "infinity", "StateChangeTimestamp": "Tue 2024-05-07 17:29:08 UTC", "StateChangeTimestampMonotonic": "170773308596", "StateDirectoryMode": "0755", "StatusErrno": "0", "StopWhenUnneeded": "no", "SubState": "exited", "SuccessAction": "none", "SurviveFinalKillSignal": "no", "SyslogFacility": "3", "SyslogLevel": "6", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "2147483646", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TasksAccounting": "yes", "TasksCurrent": "[not set]", "TasksMax": "509", "TimeoutAbortUSec": "1min 30s", "TimeoutCleanUSec": "infinity", "TimeoutStartFailureMode": "terminate", "TimeoutStartUSec": "infinity", "TimeoutStopFailureMode": "terminate", "TimeoutStopUSec": "1min 30s", "TimerSlackNSec": "50000", "Transient": "no", "Type": "oneshot", "UID": "[not set]", "UMask": "0022", "UnitFilePreset": "enabled", "UnitFileState": "enabled", "UtmpMode": "init", "WantedBy": "multi-user.target", "Wants": "postgresql@16-main.service", "WatchdogSignal": "6", "WatchdogTimestampMonotonic": "0", "WatchdogUSec": "0"}}
+2024-05-08 21:51:48,627 p=23364 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-05-08 21:51:48,627 p=23364 u=poom n=ansible | server01                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-05-08 21:51:48,627 p=23364 u=poom n=ansible | server02                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-05-10 19:32:14,324 p=71889 u=poom n=ansible | PLAY [Webserver setup] *************************************************************************************************************************************
+2024-05-10 19:32:14,330 p=71889 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 19:32:19,183 p=71889 u=poom n=ansible | ok: [server01]
+2024-05-10 19:32:19,199 p=71889 u=poom n=ansible | TASK [Install Apache2] *************************************************************************************************************************************
+2024-05-10 19:32:21,747 p=71889 u=poom n=ansible | ok: [server01]
+2024-05-10 19:32:21,758 p=71889 u=poom n=ansible | TASK [Start service] ***************************************************************************************************************************************
+2024-05-10 19:32:23,698 p=71889 u=poom n=ansible | ok: [server01]
+2024-05-10 19:32:23,724 p=71889 u=poom n=ansible | PLAY [DBServer setup] **************************************************************************************************************************************
+2024-05-10 19:32:23,727 p=71889 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 19:32:36,592 p=71889 u=poom n=ansible | ok: [server02]
+2024-05-10 19:32:36,608 p=71889 u=poom n=ansible | TASK [Install PostgreSQL] **********************************************************************************************************************************
+2024-05-10 19:32:43,538 p=71889 u=poom n=ansible | ok: [server02]
+2024-05-10 19:32:43,546 p=71889 u=poom n=ansible | TASK [Ensure PostgreSQL service is started and enabled] ****************************************************************************************************
+2024-05-10 19:32:50,022 p=71889 u=poom n=ansible | ok: [server02]
+2024-05-10 19:32:50,032 p=71889 u=poom n=ansible | TASK [Create database] *************************************************************************************************************************************
+2024-05-10 19:32:56,138 p=71889 u=poom n=ansible | fatal: [server02]: FAILED! => {"changed": false, "msg": "Failed to import the required Python library (psycopg2) on ubuntu-s-1vcpu-512mb-10gb-sfo3-01's Python /usr/bin/python3. Please read the module documentation and install it in the appropriate location. If the required library is installed, but Ansible is using the wrong Python interpreter, please consult the documentation on ansible_python_interpreter"}
+2024-05-10 19:32:56,140 p=71889 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-05-10 19:32:56,140 p=71889 u=poom n=ansible | server01                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-05-10 19:32:56,140 p=71889 u=poom n=ansible | server02                   : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-05-10 19:35:44,814 p=73990 u=poom n=ansible | PLAY [Webserver setup] *************************************************************************************************************************************
+2024-05-10 19:35:44,819 p=73990 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 19:35:48,962 p=73990 u=poom n=ansible | ok: [server01]
+2024-05-10 19:35:48,977 p=73990 u=poom n=ansible | TASK [Install Apache2] *************************************************************************************************************************************
+2024-05-10 19:35:51,391 p=73990 u=poom n=ansible | ok: [server01]
+2024-05-10 19:35:51,401 p=73990 u=poom n=ansible | TASK [Start service] ***************************************************************************************************************************************
+2024-05-10 19:35:53,280 p=73990 u=poom n=ansible | ok: [server01]
+2024-05-10 19:35:53,307 p=73990 u=poom n=ansible | PLAY [DBServer setup] **************************************************************************************************************************************
+2024-05-10 19:35:53,310 p=73990 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 19:36:05,269 p=73990 u=poom n=ansible | ok: [server02]
+2024-05-10 19:36:05,280 p=73990 u=poom n=ansible | TASK [Install PostgreSQL] **********************************************************************************************************************************
+2024-05-10 19:36:11,870 p=73990 u=poom n=ansible | ok: [server02]
+2024-05-10 19:36:11,877 p=73990 u=poom n=ansible | TASK [Ensure PostgreSQL service is started and enabled] ****************************************************************************************************
+2024-05-10 19:36:17,322 p=73990 u=poom n=ansible | ok: [server02]
+2024-05-10 19:36:17,327 p=73990 u=poom n=ansible | TASK [Install PostgreSQL Python library] *******************************************************************************************************************
+2024-05-10 19:36:34,714 p=73990 u=poom n=ansible | changed: [server02]
+2024-05-10 19:36:34,724 p=73990 u=poom n=ansible | TASK [Create database] *************************************************************************************************************************************
+2024-05-10 19:36:40,218 p=73990 u=poom n=ansible | fatal: [server02]: FAILED! => {"changed": false, "msg": "unable to connect to database: connection to server on socket \"/var/run/postgresql/.s.PGSQL.5432\" failed: FATAL:  Peer authentication failed for user \"postgres\"\n"}
+2024-05-10 19:36:40,218 p=73990 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-05-10 19:36:40,218 p=73990 u=poom n=ansible | server01                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-05-10 19:36:40,218 p=73990 u=poom n=ansible | server02                   : ok=4    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-05-10 19:38:47,414 p=75891 u=poom n=ansible | PLAY [DBServer setup] **************************************************************************************************************************************
+2024-05-10 19:38:47,420 p=75891 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 19:38:59,909 p=75891 u=poom n=ansible | ok: [server02]
+2024-05-10 19:38:59,927 p=75891 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:38:59,938 p=75891 u=poom n=ansible | ok: [server02] => {
+    "msg": "Database name is mydb"
+}
+2024-05-10 19:38:59,942 p=75891 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:38:59,953 p=75891 u=poom n=ansible | ok: [server02] => {
+    "msg": "Database user is current"
+}
+2024-05-10 19:38:59,956 p=75891 u=poom n=ansible | TASK [Install PostgreSQL] **********************************************************************************************************************************
+2024-05-10 19:39:06,536 p=75891 u=poom n=ansible | ok: [server02]
+2024-05-10 19:39:06,542 p=75891 u=poom n=ansible | TASK [Ensure PostgreSQL service is started and enabled] ****************************************************************************************************
+2024-05-10 19:39:13,183 p=75891 u=poom n=ansible | ok: [server02]
+2024-05-10 19:39:13,191 p=75891 u=poom n=ansible | TASK [Install PostgreSQL Python library] *******************************************************************************************************************
+2024-05-10 19:39:21,268 p=75891 u=poom n=ansible | ok: [server02]
+2024-05-10 19:39:21,278 p=75891 u=poom n=ansible | TASK [Create database] *************************************************************************************************************************************
+2024-05-10 19:39:27,620 p=75891 u=poom n=ansible | fatal: [server02]: FAILED! => {"changed": false, "msg": "unable to connect to database: connection to server at \"localhost\" (::1), port 5432 failed: FATAL:  ******** authentication failed for user \"postgres\"\nconnection to server at \"localhost\" (::1), port 5432 failed: FATAL:  ******** authentication failed for user \"postgres\"\n"}
+2024-05-10 19:39:27,621 p=75891 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-05-10 19:39:27,621 p=75891 u=poom n=ansible | server02                   : ok=6    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-05-10 19:40:00,205 p=76703 u=poom n=ansible | PLAY [DBServer setup] **************************************************************************************************************************************
+2024-05-10 19:40:00,210 p=76703 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 19:40:08,272 p=76703 u=poom n=ansible | ok: [server02]
+2024-05-10 19:40:08,284 p=76703 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:40:08,294 p=76703 u=poom n=ansible | ok: [server02] => {
+    "msg": "Database name is mydb"
+}
+2024-05-10 19:40:08,298 p=76703 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:40:08,307 p=76703 u=poom n=ansible | ok: [server02] => {
+    "msg": "Database user is current"
+}
+2024-05-10 19:40:08,310 p=76703 u=poom n=ansible | TASK [Install PostgreSQL] **********************************************************************************************************************************
+2024-05-10 19:40:14,642 p=76703 u=poom n=ansible | ok: [server02]
+2024-05-10 19:40:14,647 p=76703 u=poom n=ansible | TASK [Ensure PostgreSQL service is started and enabled] ****************************************************************************************************
+2024-05-10 19:40:20,705 p=76703 u=poom n=ansible | ok: [server02]
+2024-05-10 19:40:20,709 p=76703 u=poom n=ansible | TASK [Install PostgreSQL Python library] *******************************************************************************************************************
+2024-05-10 19:40:27,214 p=76703 u=poom n=ansible | ok: [server02]
+2024-05-10 19:40:27,225 p=76703 u=poom n=ansible | TASK [Create database] *************************************************************************************************************************************
+2024-05-10 19:40:32,866 p=76703 u=poom n=ansible | fatal: [server02]: FAILED! => {"changed": false, "msg": "unable to connect to database: connection to server on socket \"/var/run/postgresql/.s.PGSQL.5432\" failed: FATAL:  Peer authentication failed for user \"postgres\"\n"}
+2024-05-10 19:40:32,866 p=76703 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-05-10 19:40:32,866 p=76703 u=poom n=ansible | server02                   : ok=6    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-05-10 19:43:22,697 p=78730 u=poom n=ansible | PLAY [DBServer setup] **************************************************************************************************************************************
+2024-05-10 19:43:22,702 p=78730 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 19:43:34,227 p=78730 u=poom n=ansible | ok: [server02]
+2024-05-10 19:43:34,247 p=78730 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:43:34,261 p=78730 u=poom n=ansible | ok: [server02] => {
+    "msg": "Database name is mydb"
+}
+2024-05-10 19:43:34,266 p=78730 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:43:34,276 p=78730 u=poom n=ansible | ok: [server02] => {
+    "msg": "Database user is current"
+}
+2024-05-10 19:43:34,280 p=78730 u=poom n=ansible | TASK [Install PostgreSQL] **********************************************************************************************************************************
+2024-05-10 19:43:40,934 p=78730 u=poom n=ansible | ok: [server02]
+2024-05-10 19:43:40,942 p=78730 u=poom n=ansible | TASK [Ensure PostgreSQL service is started and enabled] ****************************************************************************************************
+2024-05-10 19:43:47,023 p=78730 u=poom n=ansible | ok: [server02]
+2024-05-10 19:43:47,031 p=78730 u=poom n=ansible | TASK [Install PostgreSQL Python library] *******************************************************************************************************************
+2024-05-10 19:43:53,022 p=78730 u=poom n=ansible | ok: [server02]
+2024-05-10 19:43:53,026 p=78730 u=poom n=ansible | TASK [Create database] *************************************************************************************************************************************
+2024-05-10 19:43:53,036 p=78730 u=poom n=ansible | fatal: [server02]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'db_name' is undefined. 'db_name' is undefined\n\nThe error appears to be in '/Users/poom/Desktop/learning/ansible/04_variable/playbooks/db.yaml': line 26, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n        state: present\n    - name: Create database\n      ^ here\n"}
+2024-05-10 19:43:53,036 p=78730 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-05-10 19:43:53,036 p=78730 u=poom n=ansible | server02                   : ok=6    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-05-10 19:44:09,154 p=79248 u=poom n=ansible | PLAY [DBServer setup] **************************************************************************************************************************************
+2024-05-10 19:44:09,160 p=79248 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 19:44:19,171 p=79248 u=poom n=ansible | ok: [server02]
+2024-05-10 19:44:19,181 p=79248 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:44:19,191 p=79248 u=poom n=ansible | ok: [server02] => {
+    "msg": "Database name is mydb"
+}
+2024-05-10 19:44:19,194 p=79248 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:44:19,206 p=79248 u=poom n=ansible | ok: [server02] => {
+    "msg": "Database user is current"
+}
+2024-05-10 19:44:19,210 p=79248 u=poom n=ansible | TASK [Install PostgreSQL] **********************************************************************************************************************************
+2024-05-10 19:44:27,878 p=79248 u=poom n=ansible | ok: [server02]
+2024-05-10 19:44:27,886 p=79248 u=poom n=ansible | TASK [Ensure PostgreSQL service is started and enabled] ****************************************************************************************************
+2024-05-10 19:44:34,928 p=79248 u=poom n=ansible | ok: [server02]
+2024-05-10 19:44:34,938 p=79248 u=poom n=ansible | TASK [Install PostgreSQL Python library] *******************************************************************************************************************
+2024-05-10 19:44:41,792 p=79248 u=poom n=ansible | ok: [server02]
+2024-05-10 19:44:41,803 p=79248 u=poom n=ansible | TASK [Create database] *************************************************************************************************************************************
+2024-05-10 19:44:49,151 p=79248 u=poom n=ansible | [WARNING]: Module remote_tmp /var/lib/postgresql/.ansible/tmp did not exist and was created with a mode of 0700, this may cause issues when running as
+another user. To avoid this, create the remote_tmp dir with the correct permissions manually
+
+2024-05-10 19:44:49,151 p=79248 u=poom n=ansible | changed: [server02]
+2024-05-10 19:44:49,155 p=79248 u=poom n=ansible | TASK [Create user] *****************************************************************************************************************************************
+2024-05-10 19:44:49,164 p=79248 u=poom n=ansible | fatal: [server02]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'dbpassword' is undefined. 'dbpassword' is undefined\n\nThe error appears to be in '/Users/poom/Desktop/learning/ansible/04_variable/playbooks/db.yaml': line 31, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n      become_user: postgres\n    - name: Create user\n      ^ here\n"}
+2024-05-10 19:44:49,164 p=79248 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-05-10 19:44:49,164 p=79248 u=poom n=ansible | server02                   : ok=7    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-05-10 19:45:28,679 p=80106 u=poom n=ansible | ERROR! this task 'var' has extra params, which is only allowed in the following modules: set_fact, ansible.legacy.win_command, raw, group_by, ansible.builtin.raw, ansible.builtin.set_fact, win_shell, ansible.builtin.include_role, ansible.legacy.include_tasks, ansible.builtin.meta, ansible.builtin.group_by, ansible.builtin.command, ansible.legacy.include_vars, script, win_command, import_tasks, ansible.legacy.include_role, meta, ansible.builtin.shell, ansible.legacy.set_fact, ansible.legacy.command, ansible.builtin.win_command, command, ansible.builtin.script, ansible.windows.win_shell, ansible.builtin.import_role, ansible.builtin.include, ansible.windows.win_command, include_tasks, add_host, ansible.builtin.win_shell, import_role, ansible.legacy.meta, ansible.builtin.include_tasks, include_vars, ansible.legacy.import_tasks, ansible.builtin.add_host, ansible.legacy.add_host, ansible.builtin.import_tasks, shell, include_role, ansible.legacy.group_by, include, ansible.legacy.win_shell, ansible.legacy.shell, ansible.legacy.include, ansible.legacy.raw, ansible.builtin.include_vars, ansible.legacy.import_role, ansible.legacy.script
+
+The error appears to be in '/Users/poom/Desktop/learning/ansible/04_variable/playbooks/db.yaml': line 11, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        msg: "Database name is {{ dbname }}"
+    - var: dbuser
+      ^ here
+
+2024-05-10 19:45:35,170 p=80195 u=poom n=ansible | ERROR! no module/action detected in task.
+
+The error appears to be in '/Users/poom/Desktop/learning/ansible/04_variable/playbooks/db.yaml': line 11, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        msg: "Database name is {{ dbname }}"
+    - vars: dbuser
+      ^ here
+
+2024-05-10 19:45:51,957 p=80370 u=poom n=ansible | PLAY [DBServer setup] **************************************************************************************************************************************
+2024-05-10 19:45:51,962 p=80370 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 19:46:02,824 p=80370 u=poom n=ansible | ok: [server02]
+2024-05-10 19:46:02,842 p=80370 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:46:02,854 p=80370 u=poom n=ansible | ok: [server02] => {
+    "msg": "Database name is mydb"
+}
+2024-05-10 19:46:02,858 p=80370 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:46:02,869 p=80370 u=poom n=ansible | ok: [server02] => {
+    "dbuser": "current"
+}
+2024-05-10 19:46:02,872 p=80370 u=poom n=ansible | TASK [Install PostgreSQL] **********************************************************************************************************************************
+2024-05-10 19:46:09,542 p=80370 u=poom n=ansible | ok: [server02]
+2024-05-10 19:46:09,552 p=80370 u=poom n=ansible | TASK [Ensure PostgreSQL service is started and enabled] ****************************************************************************************************
+2024-05-10 19:46:15,689 p=80370 u=poom n=ansible | ok: [server02]
+2024-05-10 19:46:15,697 p=80370 u=poom n=ansible | TASK [Install PostgreSQL Python library] *******************************************************************************************************************
+2024-05-10 19:46:22,341 p=80370 u=poom n=ansible | ok: [server02]
+2024-05-10 19:46:22,352 p=80370 u=poom n=ansible | TASK [Create database] *************************************************************************************************************************************
+2024-05-10 19:46:29,020 p=80370 u=poom n=ansible | ok: [server02]
+2024-05-10 19:46:29,029 p=80370 u=poom n=ansible | TASK [Create user] *****************************************************************************************************************************************
+2024-05-10 19:46:36,161 p=80370 u=poom n=ansible | [DEPRECATION WARNING]: Param 'priv' is deprecated. See the module docs for more information. This feature will be removed from community.postgreql in 
+version 3.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-05-10 19:46:36,163 p=80370 u=poom n=ansible | fatal: [server02]: FAILED! => {"changed": false, "msg": "privileges require a database to be specified"}
+2024-05-10 19:46:36,164 p=80370 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-05-10 19:46:36,164 p=80370 u=poom n=ansible | server02                   : ok=7    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-05-10 19:47:23,539 p=81362 u=poom n=ansible | PLAY [DBServer setup] **************************************************************************************************************************************
+2024-05-10 19:47:23,545 p=81362 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 19:47:32,733 p=81362 u=poom n=ansible | ok: [server02]
+2024-05-10 19:47:32,756 p=81362 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:47:32,771 p=81362 u=poom n=ansible | ok: [server02] => {
+    "msg": "Database name is mydb"
+}
+2024-05-10 19:47:32,775 p=81362 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:47:32,784 p=81362 u=poom n=ansible | ok: [server02] => {
+    "dbuser": "current"
+}
+2024-05-10 19:47:32,788 p=81362 u=poom n=ansible | TASK [Install PostgreSQL] **********************************************************************************************************************************
+2024-05-10 19:47:39,200 p=81362 u=poom n=ansible | ok: [server02]
+2024-05-10 19:47:39,205 p=81362 u=poom n=ansible | TASK [Ensure PostgreSQL service is started and enabled] ****************************************************************************************************
+2024-05-10 19:47:45,377 p=81362 u=poom n=ansible | ok: [server02]
+2024-05-10 19:47:45,382 p=81362 u=poom n=ansible | TASK [Install PostgreSQL Python library] *******************************************************************************************************************
+2024-05-10 19:47:52,515 p=81362 u=poom n=ansible | ok: [server02]
+2024-05-10 19:47:52,527 p=81362 u=poom n=ansible | TASK [Create database] *************************************************************************************************************************************
+2024-05-10 19:47:59,506 p=81362 u=poom n=ansible | ok: [server02]
+2024-05-10 19:47:59,511 p=81362 u=poom n=ansible | TASK [Create user] *****************************************************************************************************************************************
+2024-05-10 19:48:06,006 p=81362 u=poom n=ansible | fatal: [server02]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (postgresql_user) module: privs. Supported parameters include: ca_cert, comment, conn_limit, connect_params, db, encrypted, expires, fail_on_user, groups, login_host, login_********, login_unix_socket, login_user, no_********_changes, ********, port, priv, role_attr_flags, session_role, ssl_cert, ssl_key, ssl_mode, state, trust_input, user (fail_on_role, host, login, login_db, login_port, name, ssl_rootcert, unix_socket)."}
+2024-05-10 19:48:06,007 p=81362 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-05-10 19:48:06,008 p=81362 u=poom n=ansible | server02                   : ok=7    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-05-10 19:48:38,379 p=82200 u=poom n=ansible | PLAY [DBServer setup] **************************************************************************************************************************************
+2024-05-10 19:48:38,384 p=82200 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 19:48:47,158 p=82200 u=poom n=ansible | ok: [server02]
+2024-05-10 19:48:47,174 p=82200 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:48:47,185 p=82200 u=poom n=ansible | ok: [server02] => {
+    "msg": "Database name is mydb"
+}
+2024-05-10 19:48:47,189 p=82200 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:48:47,199 p=82200 u=poom n=ansible | ok: [server02] => {
+    "dbuser": "current"
+}
+2024-05-10 19:48:47,203 p=82200 u=poom n=ansible | TASK [Install PostgreSQL] **********************************************************************************************************************************
+2024-05-10 19:48:54,300 p=82200 u=poom n=ansible | ok: [server02]
+2024-05-10 19:48:54,311 p=82200 u=poom n=ansible | TASK [Ensure PostgreSQL service is started and enabled] ****************************************************************************************************
+2024-05-10 19:49:00,684 p=82200 u=poom n=ansible | ok: [server02]
+2024-05-10 19:49:00,689 p=82200 u=poom n=ansible | TASK [Install PostgreSQL Python library] *******************************************************************************************************************
+2024-05-10 19:49:07,414 p=82200 u=poom n=ansible | ok: [server02]
+2024-05-10 19:49:07,425 p=82200 u=poom n=ansible | TASK [Create database] *************************************************************************************************************************************
+2024-05-10 19:49:13,855 p=82200 u=poom n=ansible | ok: [server02]
+2024-05-10 19:49:13,866 p=82200 u=poom n=ansible | TASK [Create user] *****************************************************************************************************************************************
+2024-05-10 19:49:20,821 p=82200 u=poom n=ansible | [DEPRECATION WARNING]: Param 'priv' is deprecated. See the module docs for more information. This feature will be removed from community.postgreql in 
+version 3.0.0. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+2024-05-10 19:49:20,822 p=82200 u=poom n=ansible | fatal: [server02]: FAILED! => {"changed": false, "msg": "privileges require a database to be specified"}
+2024-05-10 19:49:20,823 p=82200 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-05-10 19:49:20,823 p=82200 u=poom n=ansible | server02                   : ok=7    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-05-10 19:51:16,235 p=83806 u=poom n=ansible | PLAY [DBServer setup] **************************************************************************************************************************************
+2024-05-10 19:51:16,241 p=83806 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 19:51:27,364 p=83806 u=poom n=ansible | ok: [server02]
+2024-05-10 19:51:27,381 p=83806 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:51:27,395 p=83806 u=poom n=ansible | ok: [server02] => {
+    "msg": "Database name is mydb"
+}
+2024-05-10 19:51:27,399 p=83806 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:51:27,410 p=83806 u=poom n=ansible | ok: [server02] => {
+    "dbuser": "current"
+}
+2024-05-10 19:51:27,415 p=83806 u=poom n=ansible | TASK [Install PostgreSQL] **********************************************************************************************************************************
+2024-05-10 19:51:35,153 p=83806 u=poom n=ansible | ok: [server02]
+2024-05-10 19:51:35,162 p=83806 u=poom n=ansible | TASK [Ensure PostgreSQL service is started and enabled] ****************************************************************************************************
+2024-05-10 19:51:42,636 p=83806 u=poom n=ansible | ok: [server02]
+2024-05-10 19:51:42,645 p=83806 u=poom n=ansible | TASK [Install PostgreSQL Python library] *******************************************************************************************************************
+2024-05-10 19:51:48,698 p=83806 u=poom n=ansible | ok: [server02]
+2024-05-10 19:51:48,703 p=83806 u=poom n=ansible | TASK [Create database] *************************************************************************************************************************************
+2024-05-10 19:51:54,833 p=83806 u=poom n=ansible | fatal: [server02]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (postgresql_db) module: register. Supported parameters include: ca_cert, conn_limit, connect_params, db, dump_extra_args, encoding, force, lc_collate, lc_ctype, login_host, login_password, login_unix_socket, login_user, maintenance_db, owner, port, session_role, ssl_cert, ssl_key, ssl_mode, state, tablespace, target, target_opts, template, trust_input (host, login, login_port, name, ssl_rootcert, unix_socket)."}
+2024-05-10 19:51:54,835 p=83806 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-05-10 19:51:54,835 p=83806 u=poom n=ansible | server02                   : ok=6    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-05-10 19:53:43,069 p=85267 u=poom n=ansible | PLAY [DBServer setup] **************************************************************************************************************************************
+2024-05-10 19:53:43,074 p=85267 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 19:53:55,710 p=85267 u=poom n=ansible | ok: [server02]
+2024-05-10 19:53:55,727 p=85267 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:53:55,739 p=85267 u=poom n=ansible | ok: [server02] => {
+    "msg": "Database name is mydb"
+}
+2024-05-10 19:53:55,743 p=85267 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:53:55,753 p=85267 u=poom n=ansible | ok: [server02] => {
+    "dbuser": "current"
+}
+2024-05-10 19:53:55,757 p=85267 u=poom n=ansible | TASK [Install PostgreSQL] **********************************************************************************************************************************
+2024-05-10 19:54:03,122 p=85267 u=poom n=ansible | ok: [server02]
+2024-05-10 19:54:03,126 p=85267 u=poom n=ansible | TASK [Ensure PostgreSQL service is started and enabled] ****************************************************************************************************
+2024-05-10 19:54:10,107 p=85267 u=poom n=ansible | ok: [server02]
+2024-05-10 19:54:10,117 p=85267 u=poom n=ansible | TASK [Install PostgreSQL Python library] *******************************************************************************************************************
+2024-05-10 19:54:19,836 p=85267 u=poom n=ansible | ok: [server02]
+2024-05-10 19:54:19,849 p=85267 u=poom n=ansible | TASK [Create database] *************************************************************************************************************************************
+2024-05-10 19:54:26,711 p=85267 u=poom n=ansible | ok: [server02]
+2024-05-10 19:54:26,718 p=85267 u=poom n=ansible | TASK [print dbout variable] ********************************************************************************************************************************
+2024-05-10 19:54:26,734 p=85267 u=poom n=ansible | ok: [server02] => {
+    "dbout": {
+        "changed": false,
+        "db": "mydb",
+        "executed_commands": [],
+        "failed": false
+    }
+}
+2024-05-10 19:54:26,739 p=85267 u=poom n=ansible | TASK [Create user] *****************************************************************************************************************************************
+2024-05-10 19:54:33,917 p=85267 u=poom n=ansible | changed: [server02]
+2024-05-10 19:54:33,944 p=85267 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-05-10 19:54:33,944 p=85267 u=poom n=ansible | server02                   : ok=9    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-05-10 19:57:49,641 p=87708 u=poom n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: db.yaml
+
+2024-05-10 19:57:49,641 p=87708 u=poom n=ansible | [WARNING]: No hosts matched, nothing to do
+
+2024-05-10 19:57:49,642 p=87708 u=poom n=ansible | ERROR! No argument passed to command module
+2024-05-10 19:57:54,585 p=87765 u=poom n=ansible | PLAY [DBServer setup] **************************************************************************************************************************************
+2024-05-10 19:57:54,591 p=87765 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 19:58:05,891 p=87765 u=poom n=ansible | ok: [server02]
+2024-05-10 19:58:05,903 p=87765 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:58:05,914 p=87765 u=poom n=ansible | ok: [server02] => {
+    "msg": "Database name is sky"
+}
+2024-05-10 19:58:05,918 p=87765 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 19:58:05,926 p=87765 u=poom n=ansible | ok: [server02] => {
+    "dbuser": "pilot"
+}
+2024-05-10 19:58:05,930 p=87765 u=poom n=ansible | TASK [Install PostgreSQL] **********************************************************************************************************************************
+2024-05-10 19:58:12,908 p=87765 u=poom n=ansible | ok: [server02]
+2024-05-10 19:58:12,918 p=87765 u=poom n=ansible | TASK [Ensure PostgreSQL service is started and enabled] ****************************************************************************************************
+2024-05-10 19:58:18,676 p=87765 u=poom n=ansible | ok: [server02]
+2024-05-10 19:58:18,683 p=87765 u=poom n=ansible | TASK [Install PostgreSQL Python library] *******************************************************************************************************************
+2024-05-10 19:58:24,980 p=87765 u=poom n=ansible | ok: [server02]
+2024-05-10 19:58:24,992 p=87765 u=poom n=ansible | TASK [Create database] *************************************************************************************************************************************
+2024-05-10 19:58:31,928 p=87765 u=poom n=ansible | changed: [server02]
+2024-05-10 19:58:31,937 p=87765 u=poom n=ansible | TASK [print dbout variable] ********************************************************************************************************************************
+2024-05-10 19:58:31,953 p=87765 u=poom n=ansible | ok: [server02] => {
+    "dbout": {
+        "changed": true,
+        "db": "sky",
+        "executed_commands": [
+            "CREATE DATABASE \"sky\""
+        ],
+        "failed": false
+    }
+}
+2024-05-10 19:58:31,958 p=87765 u=poom n=ansible | TASK [Create user] *****************************************************************************************************************************************
+2024-05-10 19:58:39,108 p=87765 u=poom n=ansible | changed: [server02]
+2024-05-10 19:58:39,133 p=87765 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-05-10 19:58:39,133 p=87765 u=poom n=ansible | server02                   : ok=9    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-05-10 20:00:36,539 p=89487 u=poom n=ansible | PLAY [Understanding vars] **********************************************************************************************************************************
+2024-05-10 20:00:36,547 p=89487 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 20:00:40,888 p=89487 u=poom n=ansible | ok: [server01]
+2024-05-10 20:00:48,248 p=89487 u=poom n=ansible | ok: [server02]
+2024-05-10 20:00:48,268 p=89487 u=poom n=ansible | TASK [create user] *****************************************************************************************************************************************
+2024-05-10 20:00:49,795 p=89487 u=poom n=ansible | fatal: [server01]: FAILED! => {"changed": false, "msg": "value of state must be one of: absent, present, got: variable from playbook"}
+2024-05-10 20:00:53,447 p=89487 u=poom n=ansible | fatal: [server02]: FAILED! => {"changed": false, "msg": "value of state must be one of: absent, present, got: variable from playbook"}
+2024-05-10 20:00:53,449 p=89487 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-05-10 20:00:53,449 p=89487 u=poom n=ansible | server01                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-05-10 20:00:53,449 p=89487 u=poom n=ansible | server02                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-05-10 20:01:12,255 p=89936 u=poom n=ansible | PLAY [Understanding vars] **********************************************************************************************************************************
+2024-05-10 20:01:12,262 p=89936 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 20:01:14,898 p=89936 u=poom n=ansible | ok: [server01]
+2024-05-10 20:01:20,214 p=89936 u=poom n=ansible | ok: [server02]
+2024-05-10 20:01:20,238 p=89936 u=poom n=ansible | TASK [create user] *****************************************************************************************************************************************
+2024-05-10 20:01:22,285 p=89936 u=poom n=ansible | changed: [server01]
+2024-05-10 20:01:25,712 p=89936 u=poom n=ansible | changed: [server02]
+2024-05-10 20:01:25,718 p=89936 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 20:01:25,732 p=89936 u=poom n=ansible | ok: [server01] => {
+    "userout": {
+        "changed": true,
+        "comment": "variable from playbook",
+        "create_home": true,
+        "failed": false,
+        "group": 1000,
+        "home": "/home/name",
+        "name": "name",
+        "shell": "/bin/sh",
+        "state": "present",
+        "system": false,
+        "uid": 1000
+    }
+}
+2024-05-10 20:01:25,737 p=89936 u=poom n=ansible | ok: [server02] => {
+    "userout": {
+        "changed": true,
+        "comment": "variable from playbook",
+        "create_home": true,
+        "failed": false,
+        "group": 1000,
+        "home": "/home/name",
+        "name": "name",
+        "shell": "/bin/sh",
+        "state": "present",
+        "system": false,
+        "uid": 1000
+    }
+}
+2024-05-10 20:01:25,764 p=89936 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-05-10 20:01:25,764 p=89936 u=poom n=ansible | server01                   : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-05-10 20:01:25,765 p=89936 u=poom n=ansible | server02                   : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-05-10 20:02:30,029 p=90800 u=poom n=ansible | PLAY [Understanding vars] **********************************************************************************************************************************
+2024-05-10 20:02:30,033 p=90800 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 20:02:33,858 p=90800 u=poom n=ansible | ok: [server01]
+2024-05-10 20:02:41,862 p=90800 u=poom n=ansible | ok: [server02]
+2024-05-10 20:02:41,886 p=90800 u=poom n=ansible | TASK [create user] *****************************************************************************************************************************************
+2024-05-10 20:02:43,372 p=90800 u=poom n=ansible | ok: [server01]
+2024-05-10 20:02:47,175 p=90800 u=poom n=ansible | ok: [server02]
+2024-05-10 20:02:47,185 p=90800 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 20:02:47,203 p=90800 u=poom n=ansible | ok: [server01] => {
+    "userout.name": "name"
+}
+2024-05-10 20:02:47,210 p=90800 u=poom n=ansible | ok: [server02] => {
+    "userout.name": "name"
+}
+2024-05-10 20:02:47,215 p=90800 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 20:02:47,228 p=90800 u=poom n=ansible | ok: [server01] => {
+    "userout.comment": "variable from playbook"
+}
+2024-05-10 20:02:47,234 p=90800 u=poom n=ansible | ok: [server02] => {
+    "userout.comment": "variable from playbook"
+}
+2024-05-10 20:02:47,258 p=90800 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-05-10 20:02:47,258 p=90800 u=poom n=ansible | server01                   : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-05-10 20:02:47,258 p=90800 u=poom n=ansible | server02                   : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-05-10 20:03:41,396 p=91574 u=poom n=ansible | PLAY [Understanding vars] **********************************************************************************************************************************
+2024-05-10 20:03:41,401 p=91574 u=poom n=ansible | TASK [Gathering Facts] *************************************************************************************************************************************
+2024-05-10 20:03:43,999 p=91574 u=poom n=ansible | ok: [server01]
+2024-05-10 20:03:49,392 p=91574 u=poom n=ansible | ok: [server02]
+2024-05-10 20:03:49,411 p=91574 u=poom n=ansible | TASK [create user] *****************************************************************************************************************************************
+2024-05-10 20:03:50,948 p=91574 u=poom n=ansible | changed: [server01]
+2024-05-10 20:03:55,121 p=91574 u=poom n=ansible | changed: [server02]
+2024-05-10 20:03:55,135 p=91574 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 20:03:55,153 p=91574 u=poom n=ansible | ok: [server01] => {
+    "userout.name": "commonuser"
+}
+2024-05-10 20:03:55,160 p=91574 u=poom n=ansible | ok: [server02] => {
+    "userout.name": "commonuser"
+}
+2024-05-10 20:03:55,166 p=91574 u=poom n=ansible | TASK [debug] ***********************************************************************************************************************************************
+2024-05-10 20:03:55,178 p=91574 u=poom n=ansible | ok: [server01] => {
+    "userout.comment": "variable from groupvars_all"
+}
+2024-05-10 20:03:55,184 p=91574 u=poom n=ansible | ok: [server02] => {
+    "userout.comment": "variable from groupvars_all"
+}
+2024-05-10 20:03:55,209 p=91574 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
+2024-05-10 20:03:55,209 p=91574 u=poom n=ansible | server01                   : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-05-10 20:03:55,209 p=91574 u=poom n=ansible | server02                   : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

@@ -1,0 +1,42 @@
+- name: DBServer setup
+  hosts: server02
+  become: yes
+  # vars:
+  #   dbname: mydb
+  #   dbuser: current
+  #   dbpass: password
+  tasks:
+    - debug:
+        msg: "Database name is {{ dbname }}"
+    - debug:
+        var: dbuser
+    - name: Install PostgreSQL
+      apt:
+        name: postgresql
+        state: present
+    - name: Ensure PostgreSQL service is started and enabled
+      systemd:
+        name: postgresql
+        state: started
+        enabled: yes
+    - name: Install PostgreSQL Python library
+      apt:
+        name: python3-psycopg2
+        state: present
+    - name: Create database
+      postgresql_db:
+        state: present
+        name: "{{ dbname }}"
+      register: dbout
+      become_user: postgres
+    - name: print dbout variable
+      debug:
+        var: dbout
+    - name: Create user
+      postgresql_user:
+        state: present
+        name: "{{ dbuser }}"
+        password: "{{ dbpass }}"
+        role_attr_flags: CREATEDB,CREATEROLE,SUPERUSER
+      become_user: postgres
+

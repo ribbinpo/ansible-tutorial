@@ -1,0 +1,6 @@
+dbname: sky
+dbuser: pilot
+dbpass: 123
+
+USER: commonuser
+COMM: variable from groupvars_all

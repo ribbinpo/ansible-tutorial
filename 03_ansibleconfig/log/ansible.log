@@ -30,3 +30,4 @@
 2024-05-08 21:51:48,627 p=23364 u=poom n=ansible | PLAY RECAP *************************************************************************************************************************************************
 2024-05-08 21:51:48,627 p=23364 u=poom n=ansible | server01                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2024-05-08 21:51:48,627 p=23364 u=poom n=ansible | server02                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-05-10 19:31:52,357 p=71670 u=poom n=ansible | ERROR! the playbook: webserver.yaml could not be found

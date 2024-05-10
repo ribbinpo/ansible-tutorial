@@ -1,0 +1,10 @@
+[all:vars]
+ansible_user=root
+
+[all]
+server01 ansible_host=xxxx ansible_password=xxxx
+server02 ansible_host=xxxx ansible_password=xxxx
+
+[webservers]
+server01
+server02

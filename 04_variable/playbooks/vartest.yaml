@@ -1,0 +1,16 @@
+- name: Understanding vars
+  hosts: all
+  become: yes
+  # vars:
+  #   USER: "name"
+  #   COMM: "variable from playbook"
+  tasks:
+    - name: create user
+      user:
+        name: "{{ USER }}"
+        comment: "{{ COMM }}"
+      register: userout
+    - debug:
+        var: userout.name
+    - debug:
+        var: userout.comment
