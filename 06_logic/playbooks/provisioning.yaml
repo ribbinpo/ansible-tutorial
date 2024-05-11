@@ -1,0 +1,39 @@
+- name: Provisioning servers
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install ntp agent on CentOS
+      yum:
+        name: "{{ item  }}"
+        state: present
+      when: ansible_distribution == 'CentOS'
+      loop:
+        - chrony
+        - wget
+        - git
+        - zip
+        - unzip 
+    - name: Install ntp agent on Ubuntu
+      apt:
+        name: {{item}}
+        state: present
+        update_cache: yes # option for Ubuntu is apt-get update before installing
+      when: ansible_os_family == 'Ubuntu'
+      loop:
+        - ntp
+        - wget
+        - git
+        - zip
+        - unzip 
+    - name: Start service on CentOS
+      service:
+        name: ntpd
+        state: started
+        enabled: yes
+      when: ansible_distribution == 'CentOS'
+    - name: Start service on Ubuntu
+      service:
+        name: ntp
+        state: started
+        enabled: yes
+      when: ansible_os_family == 'Ubuntu'
