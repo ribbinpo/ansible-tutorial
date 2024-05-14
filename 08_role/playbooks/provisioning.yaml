@@ -1,0 +1,86 @@
+- name: Provisioning servers
+  hosts: all
+  become: yes
+  vars:
+    myDir: /tmp/mydir
+  tasks:
+    - name: Install ntp agent on CentOS
+      yum:
+        name: "{{item}}"
+        state: present
+      when: ansible_distribution == 'CentOS'
+      loop:
+        - chrony
+        - wget
+        - git
+        - zip
+        - unzip
+    - name: Install ntp agent on Ubuntu
+      apt:
+        name: "{{item}}"
+        state: present
+        update_cache: yes # option for Ubuntu is apt-get update before installing
+      when: ansible_os_family == 'Ubuntu'
+      loop:
+        - ntp
+        - wget
+        - git
+        - zip
+        - unzip
+    - name: Start service on CentOS
+      service:
+        name: chronyd
+        state: started
+        enabled: yes
+      when: ansible_distribution == 'CentOS'
+    - name: Start service on Ubuntu
+      service:
+        name: ntp
+        state: started
+        enabled: yes
+      when: ansible_os_family == 'Ubuntu'
+    - name: Test File
+      copy:
+        content: |
+          This is a test file
+        dest: /tmp/test.txt
+    - name: Deploy ntp agent conf on CentOS
+      template:
+        src: templates/ntpconf_centos
+        dest: /etc/ntp.conf
+        backup: yes
+      when: ansible_distribution == 'CentOS'
+      notify:
+        - Restart service on CentOS
+      # template file in templates folder (.j2 extension)
+    - name: Deploy ntp agent conf on Ubuntu
+      template:
+        src: templates/ntpconf_ubuntu
+        dest: /etc/ntp.conf
+        backup: yes
+      when: ansible_os_family == 'Ubuntu'
+      notify:
+        - Restart service on Ubuntu
+    - name: Dump File
+      copy:
+        src: files/myfile.txt
+        dest: /tmp/myfile.txt
+  # same levels with tasks but triggers when notifed
+  handlers:
+    # restart
+    - name: Restart service on CentOS
+      service:
+        name: chronyd
+        state: restarted
+        enabled: yes
+      when: ansible_distribution == 'CentOS'
+    - name: Restart service on Ubuntu
+      service:
+        name: ntp
+        state: restarted
+        enabled: yes
+      when: ansible_os_family == 'Ubuntu'
+    - name: Create a folder
+      file:
+        path: "{{ myDir }}"
+        state: directory
